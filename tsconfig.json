@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "es6",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "outDir": "./build/"
+  },
+  "compileOnSave": true,
+  "exclude": ["node_modules"],
+  "include": ["src/**/*.ts"],
+}
