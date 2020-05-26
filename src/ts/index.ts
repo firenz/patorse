@@ -1,4 +1,4 @@
-// import convertMessage from "./morse-conversion";
+import convertMessage from "./morse-conversion";
 
 const startPatorse = (): void => {
   let btn = (<HTMLInputElement>document.getElementById("cuackbutton"));
@@ -10,9 +10,9 @@ const startPatorse = (): void => {
 
 const handleInput = (): void => {
   const message = (<HTMLInputElement>document.getElementById("stringToMorse")).value;
-  // const convertedMessage = convertMessage(message);
+  const convertedMessage = convertMessage(message);
   console.log(message);
-  // console.log(convertedMessage);
+  console.log(convertedMessage);
 };
 
 startPatorse();
