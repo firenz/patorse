@@ -10,11 +10,13 @@
 
     <textarea
       name="stringToMorse"
-      id="stringToMorse"
+      id="message"
       cols="30"
       rows="10"
     ></textarea>
-    <input type="button" value="Click" id="cuackbutton"></input>
+    <input type="button" value="Click" id="cuack-btn"></input>
+    <input type="range" id="volume" min="0" max="2" value="1" step="0.01">
+    <audio src="" id="cuack-audio"></audio>
   </body>
   <script src="./ts/index.ts"></script>
 </html>
