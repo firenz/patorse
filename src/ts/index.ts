@@ -1,6 +1,4 @@
-import 'regenerator-runtime';
 import convertMessage from "./morse-conversion";
-import { playShortAudio } from "./morse-audio";
 import startPatorseAudio from "./morse-transmission";
 
 const startPatorse = (): void => {
