@@ -4,19 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    Hello patorse
-
-    <textarea
-      name="stringToMorse"
-      id="message"
-      cols="30"
-      rows="10"
-    ></textarea>
-    <input type="button" value="Click" id="cuack-btn"></input>
-    <input type="range" id="volume" min="0" max="2" value="1" step="0.01">
-    <audio src="" id="cuack-audio"></audio>
+    <header>
+      Patorse
+    </header>
+    <main>
+      <textarea
+        name="stringToMorse"
+        id="message"
+        wrap="off"
+      ></textarea>
+      <button id="cuack-btn">Let's patorse!</button>
+      <input type="range" id="volume" min="0" max="2" value="1" step="0.01" />
+      <audio src="" id="cuack-audio"></audio>
+    </main>
+    <footer>
+      Made by
+      <a href="mailto:alicia.guardenoalbertos@gmail.com" target="_blank"
+        >Alicia G.</a
+      >, audio by <a href="#" target="_blank">Oliver Moya Bueno</a>
+    </footer>
   </body>
   <script src="./ts/index.ts"></script>
 </html>
