@@ -15,9 +15,12 @@
   "keywords": [
     "pet-project",
     "parcel",
-    "javascript",
+    "web audio api",
+    "typescript",
+    "sass",
     "async",
-    "audio"
+    "webpage",
+    "morse code"
   ],
   "author": "Alicia G. <alicia.guardenoalbertos@gmail.com>",
   "license": "ISC",
@@ -26,10 +29,13 @@
   },
   "homepage": "https://github.com/Firenz/patorse#readme",
   "dependencies": {
+    "regenerator-runtime": "^0.13.5"
+  },
+  "devDependencies": {
     "@types/node": "^14.0.5",
     "parcel-bundler": "^1.12.4",
-    "regenerator-runtime": "^0.13.5",
     "rimraf": "^3.0.2",
+    "sass": "^1.26.5",
     "typescript": "^3.9.3"
   }
 }
