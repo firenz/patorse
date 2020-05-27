@@ -2,7 +2,7 @@
   "name": "patorse",
   "version": "1.0.0",
   "description": "A funny pet project that converts your text into morse code, :duck: BUT IN CUACKS!!! :duck:",
-  "main": "index.js",
+  "main": "./src/main.js",
   "scripts": {
     "start": "tsc --noEmit && rimraf dist && parcel ./src/index.html --open",
     "build": "tsc --noEmit && rimraf dist && parcel ./src/index.html",
