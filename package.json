@@ -6,7 +6,8 @@
   "scripts": {
     "start": "tsc --noEmit && rimraf dist && parcel ./src/index.html --open",
     "build": "tsc --noEmit && rimraf dist && parcel ./src/index.html",
-    "build:prod": "tsc --noEmit && rimraf dist && parcel build ./src/index.html"
+    "build:prod": "tsc --noEmit && rimraf dist && parcel build ./src/index.html",
+    "build:gh-pages": "parcel build index.html --public-url http://firenz.github.io/patorse/"
   },
   "repository": {
     "type": "git",
