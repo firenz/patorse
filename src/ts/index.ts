@@ -1,20 +1,24 @@
+import 'regenerator-runtime';
 import convertMessage from "./morse-conversion";
 import { playShortAudio } from "./morse-audio";
+import startPatorseAudio from "./morse-transmission";
 
 const startPatorse = (): void => {
   let btn = (<HTMLInputElement>document.getElementById("cuack-btn"));
   btn.addEventListener("click", (e: Event) => {
     handleInput();
-    // btn.disabled = true;
+    btn.disabled = true;
   });
 };
 
 const handleInput = (): void => {
   const message = (<HTMLInputElement>document.getElementById("message")).value;
+  // console.log(message);
+
   const convertedMessage = convertMessage(message);
-  console.log(message);
-  console.log(convertedMessage);
-  playShortAudio();
+  // console.log(convertedMessage);
+
+  startPatorseAudio(convertedMessage);
 };
 
 startPatorse();

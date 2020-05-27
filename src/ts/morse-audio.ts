@@ -26,8 +26,8 @@ const longSounds: SoundsCollection = {
   3: longAudio4
 }
 
-// for legacy browsers
-const AudioContext = window.AudioContext || window.webkitAudioContext;
+// get the audio context in which the audio will play
+const AudioContext = window.AudioContext;
 const audioContext = new AudioContext();
 
 // get the audio element
@@ -43,7 +43,7 @@ const volumeControl = <HTMLInputElement>document.getElementById("volume");
 volumeControl.addEventListener(
   "input",
   function () {
-    gainNode.gain.value = this.value;
+    gainNode.gain.value = Number(this.value);
   },
   false
 );
