@@ -1,26 +1,30 @@
 import { playShortAudio, playLongAudio } from "./morse-audio";
 
 type Transmission = (() => Promise<any>)[];
+const baseWaitingTimeForAudio: number = 1000;
+const baseWaitingTimeForIdle: number = 500;
 
 const writer = (isOn: boolean): any => {
   //TODO some graphic change in the website while playing morse code
-
   // let timeStamp: Date = new Date();
   // console.log(`[${timeStamp.toLocaleTimeString()}] ${isOn ? "ON" : "OFF"}`);
 };
 
 const delay = (
+  delayIsForAudio: boolean,
   callback: (...args: any[]) => void,
   timePoint: number
 ): NodeJS.Timeout => {
-  const baseWaitingTime: number = 1000;
+  const baseWaitingTime: number = delayIsForAudio
+    ? baseWaitingTimeForAudio
+    : baseWaitingTimeForIdle;
   return setTimeout(callback, timePoint * baseWaitingTime);
 };
 
 const endTransmission = (): void => {
   // console.log(`--- END OF TRANSMISSION ---`);
 
-  let btn = (<HTMLInputElement>document.getElementById("cuack-btn"));
+  let btn = <HTMLInputElement>document.getElementById("cuack-btn");
   btn.disabled = false;
 };
 
@@ -38,7 +42,7 @@ const generateTransmission = (
             () =>
               new Promise((resolve) => {
                 writer(false);
-                delay(resolve, 1);
+                delay(false, resolve, 1);
               })
           );
           break;
@@ -48,7 +52,7 @@ const generateTransmission = (
               new Promise((resolve) => {
                 writer(true);
                 playShortAudio();
-                delay(resolve, 1);
+                delay(true, resolve, 1);
               })
           );
           break;
@@ -58,7 +62,7 @@ const generateTransmission = (
               new Promise((resolve) => {
                 writer(true);
                 playLongAudio();
-                delay(resolve, 3);
+                delay(true, resolve, 3);
               })
           );
           break;
@@ -67,7 +71,7 @@ const generateTransmission = (
             () =>
               new Promise((resolve) => {
                 writer(false);
-                delay(resolve, 3);
+                delay(false, resolve, 3);
               })
           );
           break;
@@ -76,7 +80,7 @@ const generateTransmission = (
             () =>
               new Promise((resolve) => {
                 writer(false);
-                delay(resolve, 7);
+                delay(false, resolve, 7);
               })
           );
           break;

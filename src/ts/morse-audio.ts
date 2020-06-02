@@ -52,7 +52,7 @@ track.connect(gainNode).connect(audioContext.destination);
 
 const playAudio = (sounds: SoundsCollection): void => {
   const randomNumber = getRandomInt(0, Object.keys(sounds).length);
-  console.log(sounds[randomNumber]);
+  // console.log(sounds[randomNumber]);
   audioElement.src = sounds[randomNumber];
 
   // check if context is in suspended state (autoplay policy)
