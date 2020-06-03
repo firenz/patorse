@@ -1,0 +1,30 @@
+@mixin flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin pageFullHeight {
+  @include flexColumn();
+  justify-content: space-between;
+  height: 100vh;
+}
+
+@mixin initBody {
+  margin: 0;
+  padding: 0;
+  @include pageFullHeight();
+}
+
+@mixin setBgColorAndHover($baseColor) {
+  background-color: $baseColor;
+  &:hover {
+    background-color: darken($baseColor, 5%)
+  }
+}
+
+@mixin setFontColorAndHover($baseColor) {
+  color: $baseColor;
+  &:hover {
+    color: darken($baseColor, 5%)
+  }
+}

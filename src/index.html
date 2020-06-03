@@ -3,28 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link href="https://css.gg/css?=play-button|play-pause" rel="stylesheet" />
+    <title>Patorse | 🦆 Turn your text into morse code with quacks 🦆</title>
   </head>
   <body>
     <header>
-      Patorse
+      <h1>
+        Patorse
+      </h1>
+      <h2>
+        Turn your text into morse code... 🦆 but in QUACKS! 🦆
+      </h2>
     </header>
     <main>
-      <textarea
-        name="stringToMorse"
-        id="message"
-        wrap="off"
-      ></textarea>
-      <button id="cuack-btn">Let's patorse!</button>
-      <input type="range" id="volume" min="0" max="2" value="1" step="0.01" />
-      <audio src="" id="cuack-audio"></audio>
+      <section>
+        <textarea 
+          name="stringToMorseCode" 
+          id="message"
+          cols="20" 
+          wrap="hard" 
+          autofocus="true"
+          placeholder="Type here..."
+        ></textarea>
+        <button id="cuack-btn">
+          Let's patorse!
+        </button>
+      </section>
+      <section>
+        <input
+          type="range"
+          name="volume"
+          id="volume"
+          min="0"
+          max="2"
+          value="1"
+          step="0.01"
+        />
+      </section>
     </main>
     <footer>
-      Made by
-      <a href="mailto:alicia.guardenoalbertos@gmail.com" target="_blank"
-        >Alicia G.</a
-      >, audio by <a href="https://olimobu.github.io/" target="_blank">Oliver Moya Bueno</a>
+      <section id="version">
+        0.1 version
+      </section>
+      <section id="credits">
+        &copy; 2020. Developed with 💜 by
+        <a href="mailto:alicia.guardenoalbertos@gmail.com">
+          Alicia G.
+        </a>
+        & audio by
+        <a href="https://olimobu.github.io/">
+          Oliver M.
+        </a>
+      </section>
     </footer>
+    <audio src="" id="cuack-audio"></audio>
   </body>
   <script src="./main.js"></script>
 </html>

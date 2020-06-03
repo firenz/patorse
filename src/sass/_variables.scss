@@ -1,0 +1,25 @@
+// $color-background: #433a3f;
+// $color-primary: #c0c5c1;
+// $color-secondary: #7d8491;
+// $color-accent-1: #485696;
+// $color-accent-2: #f9c784;
+
+$color-background: #f9f9f9;
+$color-primary: #332f31;
+$color-secondary: #949494;
+$color-accent-1: #485696;
+$color-accent-2: #f9c784;
+
+$font-family-default: Arial, Helvetica, sans-serif, monospace;
+$font-size-default: 1rem;
+$font-color-primary: $color-primary;
+$font-color-secondary: $color-secondary;
+
+$textarea-border-color: $color-secondary;
+$textarea-border-size: 4px;
+$textarea-border-radius: 10px;
+$textarea-font-size: $font-size-default * 2;
+
+$button-color: $color-accent-2;
+$button-font-size: $font-size-default * 2.5;
+$button-radius: 30px;

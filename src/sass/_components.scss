@@ -1,0 +1,39 @@
+@import "_variables.scss";
+
+textarea {
+  margin: 0 2rem;
+  padding: 0.8rem;
+  height: 12rem;
+  font-size: $textarea-font-size;
+  color: $font-color-secondary;
+  border: $textarea-border-size solid $color-primary;
+  border-radius: 10px;
+  outline: none;
+  resize: none;
+  overflow: auto;
+}
+
+button {
+  margin: 2rem 0.5rem;
+  padding: 1.3rem 1rem;
+  outline: none;
+  border: none;
+  border-radius: 30px;
+  font-size: $button-font-size;
+  font-weight: bold;
+  cursor: pointer;
+  @include setBgColorAndHover($color-accent-1);
+  @include setFontColorAndHover($color-accent-2);
+
+  &:active {
+    cursor: pointer;
+    @include setBgColorAndHover($color-accent-1);
+    @include setFontColorAndHover($color-accent-2);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    @include setBgColorAndHover($color-secondary);
+    // @include setFontColorAndHover(darken($color-secondary, 5%));
+  }
+}

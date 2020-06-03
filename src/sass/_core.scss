@@ -1,0 +1,58 @@
+@import "_variables.scss";
+@import "_mixins.scss";
+
+body {
+  @include initBody();
+  font-family: $font-family-default;
+  background-color: $color-background;
+}
+
+header {
+  text-align: center;
+  padding: 1.5rem 0 0;
+
+  h1 {
+    font-size: $font-size-default * 2 * 1.5;
+    color: $font-color-primary;
+    margin: 0;
+    font-weight: bolder;
+  }
+
+  h2 {
+    font-size: $font-size-default * 1.5;
+    color: $font-color-secondary;
+    margin: 0.5rem 1rem 0;
+  }
+}
+
+main {
+  flex-grow: 1;
+  @include flexColumn();
+  justify-content: center;
+  align-items: center;
+
+  section {
+    width: 90%;
+    max-width: 45rem;
+    margin: 0 1rem;
+    text-align: center;
+  }
+}
+
+footer {
+  font-size: $font-size-default * 1.1;
+  color: $font-color-primary;
+  font-weight: bold;
+  text-align: center;
+  margin: 0 1rem 0.5rem;
+
+  a {
+    text-decoration: none;
+  }
+
+  #version {
+    font-size: $font-size-default;
+    color: transparentize($font-color-primary, 0.3);
+    padding-bottom: 0.5rem;
+  }
+}
