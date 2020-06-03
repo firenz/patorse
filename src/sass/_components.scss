@@ -1,7 +1,9 @@
 @import "_variables.scss";
 
 textarea {
-  margin: 0 2rem;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 30rem;
   padding: 0.8rem;
   height: 12rem;
   font-size: $textarea-font-size;
