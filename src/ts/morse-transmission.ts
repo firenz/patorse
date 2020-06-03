@@ -1,4 +1,5 @@
 import { playShortAudio, playLongAudio } from "./morse-audio";
+import { btn } from "./handle-input";
 
 type Transmission = (() => Promise<any>)[];
 const baseWaitingTimeForAudio: number = 1000;
@@ -23,8 +24,6 @@ const delay = (
 
 const endTransmission = (): void => {
   // console.log(`--- END OF TRANSMISSION ---`);
-
-  let btn = <HTMLInputElement>document.getElementById("cuack-btn");
   btn.disabled = false;
 };
 
@@ -89,7 +88,7 @@ const generateTransmission = (
             () =>
               new Promise((resolve) => {
                 writer(false);
-                resolve(endTransmission());
+                resolve();
               })
           );
           break;
@@ -100,11 +99,12 @@ const generateTransmission = (
 };
 
 const startPatorseAudio = async (convertedMessage: string): Promise<any> => {
+  // console.log(`--- START OF TRANSMISSION ---`);
   let transmission: Transmission = generateTransmission(convertedMessage);
-
   for (let i = 0; i < transmission.length; i++) {
     await transmission[i]();
   }
+  endTransmission();
 };
 
 export default startPatorseAudio;
