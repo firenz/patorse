@@ -25,6 +25,7 @@ const formatMessage = (originalMessage: string): string => {
   );
 
   return originalMessage
+    .toLowerCase()
     .replace(/^\s+|\s+$/g,"")
     .normalize("NFD")
     .replace(replaceAccentsAndEmojis, "");
