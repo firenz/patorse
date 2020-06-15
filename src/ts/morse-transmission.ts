@@ -2,8 +2,8 @@ import { playShortAudio, playLongAudio } from "./morse-audio";
 import { btn } from "./handle-input";
 
 type Transmission = (() => Promise<any>)[];
-const baseWaitingTimeForAudio: number = 1000;
-const baseWaitingTimeForIdle: number = 500;
+const baseWaitingTimeForAudio: number = 500;
+const baseWaitingTimeForIdle: number = 300;
 
 const writer = (isOn: boolean): any => {
   //TODO some graphic change in the website while playing morse code
