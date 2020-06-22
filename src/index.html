@@ -12,11 +12,17 @@
         Patorse
       </h1>
       <h2>
-        Turn your text into morse code... 🦆 but in QUACKS! 🦆
+        Turn your text into morse code... 
+        <span role="img" aria-label="Duck">&#x1F986;</span>
+         but in QUACKS! 
+        <span role="img" aria-label="Duck">&#x1F986;</span>
       </h2>
     </header>
     <main>
       <section>
+        <h2>
+          <label for="message">Enter your text in the box below</label>
+        </h2>
         <textarea 
           name="stringToMorseCode" 
           id="message"
@@ -30,6 +36,11 @@
         </button>
       </section>
       <section>
+        <h2>
+        <label for="volume">
+          <span role="img" aria-label="Speaker" id="volume-icon">&#x1F509;</span> Volume
+        </label>
+        </h2>
         <input
           type="range"
           name="volume"
@@ -46,7 +57,7 @@
         0.1 version
       </section>
       <section id="credits">
-        &copy; 2020. Developed with 💜 by
+        <span role="img" aria-label="Copyright">&copy;</span> 2020. Developed with <span role="img" aria-label="Love">&#x1F49C;</span> by
         <a href="mailto:alicia.guardenoalbertos@gmail.com">
           Alicia G.
         </a>

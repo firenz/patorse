@@ -16,7 +16,7 @@ textarea {
 }
 
 button {
-  margin: 2rem 0.5rem;
+  margin: 0.6rem 0 2rem;
   padding: 1.3rem 1rem;
   outline: none;
   border: none;
@@ -33,9 +33,19 @@ button {
     @include setFontColorAndHover($color-accent-2);
   }
 
+  &:focus {
+    outline: $textarea-border-size solid $color-primary;
+  }
+
   &:disabled {
     cursor: not-allowed;
     @include setBgColorAndHover($color-secondary);
     // @include setFontColorAndHover(darken($color-secondary, 5%));
   }
+}
+
+//TODO: integration of _inputrange.scss
+input[type=range] {
+  width: 100%;
+  max-width: 30rem;
 }

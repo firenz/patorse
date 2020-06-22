@@ -7,19 +7,22 @@ body {
   background-color: $color-background;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-size: $font-size-default * 1.5;
+  color: $font-color-primary;
+}
+
 header {
   text-align: center;
   padding: 1.5rem 0 0;
 
   h1 {
     font-size: $font-size-default * 2 * 1.5;
-    color: $font-color-primary;
     margin: 0;
     font-weight: bolder;
   }
 
   h2 {
-    font-size: $font-size-default * 1.5;
     color: $font-color-secondary;
     margin: 0.5rem 1rem 0;
   }
