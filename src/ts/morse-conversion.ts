@@ -12,6 +12,7 @@ const convertMessage = (originalMessage: string): string => {
 };
 
 const formatMessage = (originalMessage: string): string => {
+  const unused_special_characters = /[^a-z0-1.,?!@() ]/g;
   const unified_accents = "/[\u0300-\u036f]/";
   const unified_emoji_ranges = [
     "\ud83c[\udf00-\udfff]", // U+1F300 to U+1F3FF
@@ -27,6 +28,7 @@ const formatMessage = (originalMessage: string): string => {
   return originalMessage
     .toLowerCase()
     .replace(/^\s+|\s+$/g,"")
+    .replace(unused_special_characters, "")
     .normalize("NFD")
     .replace(replaceAccentsAndEmojis, "");
 };
