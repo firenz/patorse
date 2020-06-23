@@ -20,7 +20,7 @@ const formatMessage = (originalMessage: string): string => {
     "\ud83d[\ude80-\udeff]", // U+1F680 to U+1F6FF
   ];
 
-  const replaceAccentsAndEmojis = new RegExp(
+  const charactersToReplace = new RegExp(
     [, unified_accents, ...unified_emoji_ranges].join("|"),
     "g"
   );
@@ -28,9 +28,9 @@ const formatMessage = (originalMessage: string): string => {
   return originalMessage
     .toLowerCase()
     .replace(/^\s+|\s+$/g,"")
-    .replace(unused_special_characters, "")
     .normalize("NFD")
-    .replace(replaceAccentsAndEmojis, "");
+    .replace(charactersToReplace, "")
+    .replace(unused_special_characters, "");
 };
 
 const wordToMorse = (word: string): string => {
