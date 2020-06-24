@@ -39,16 +39,20 @@ const track = audioContext.createMediaElementSource(audioElement);
 // volume
 const gainNode = audioContext.createGain();
 
-const volumeControl = <HTMLInputElement>document.getElementById("volume");
-volumeControl.addEventListener(
-  "input",
-  function () {
-    gainNode.gain.value = Number(this.value);
-  },
-  false
-);
+// const volumeControl = <HTMLInputElement>document.getElementById("volume");
+// volumeControl.addEventListener(
+//   "input",
+//   function () {
+//     gainNode.gain.value = Number(this.value);
+//   },
+//   false
+// );
 
 track.connect(gainNode).connect(audioContext.destination);
+
+const changeVolume = (value: string) => {
+  gainNode.gain.value = Number(value);
+};
 
 const playAudio = (sounds: SoundsCollection): void => {
   const randomNumber = getRandomInt(0, Object.keys(sounds).length);
@@ -74,4 +78,4 @@ const playLongAudio = (): void => {
   playAudio(longSounds);
 };
 
-export { playShortAudio, playLongAudio };
+export { changeVolume, playShortAudio, playLongAudio };

@@ -13,23 +13,23 @@ const convertMessage = (originalMessage: string): string => {
 
 const formatMessage = (originalMessage: string): string => {
   const unused_special_characters = /[^a-z0-1.,?!@() ]/g;
-  const unified_accents = "/[\u0300-\u036f]/";
-  const unified_emoji_ranges = [
-    "\ud83c[\udf00-\udfff]", // U+1F300 to U+1F3FF
-    "\ud83d[\udc00-\ude4f]", // U+1F400 to U+1F64F
-    "\ud83d[\ude80-\udeff]", // U+1F680 to U+1F6FF
-  ];
+  // const unified_accents = "/[\u0300-\u036f]/";
+  // const unified_emoji_ranges = [
+  //   "\ud83c[\udf00-\udfff]", // U+1F300 to U+1F3FF
+  //   "\ud83d[\udc00-\ude4f]", // U+1F400 to U+1F64F
+  //   "\ud83d[\ude80-\udeff]", // U+1F680 to U+1F6FF
+  // ];
 
-  const charactersToReplace = new RegExp(
-    [, unified_accents, ...unified_emoji_ranges].join("|"),
-    "g"
-  );
+  // const charactersToReplace = new RegExp(
+  //   [, unified_accents, ...unified_emoji_ranges].join("|"),
+  //   "g"
+  // );
 
   return originalMessage
     .toLowerCase()
     .replace(/^\s+|\s+$/g,"")
     .normalize("NFD")
-    .replace(charactersToReplace, "")
+    // .replace(charactersToReplace, "")
     .replace(unused_special_characters, "");
 };
 

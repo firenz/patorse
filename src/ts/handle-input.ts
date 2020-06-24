@@ -1,9 +1,10 @@
 import convertMessage from "./morse-conversion";
 import startPatorseAudio from "./morse-transmission";
+import { changeVolume } from "./morse-audio";
 
 const btn = <HTMLInputElement>document.getElementById("cuack-btn");
 const textarea = <HTMLInputElement>document.getElementById("message");
-const volumeSlider = <HTMLInputElement>document.getElementById("volume");
+const volumeControl = <HTMLInputElement>document.getElementById("volume");
 const volumeIcon = <HTMLSpanElement>document.getElementById("volume-icon");
 
 const initListeners = (): void => {
@@ -11,10 +12,11 @@ const initListeners = (): void => {
     clickButton();
     btn.disabled = true;
   });
-  volumeSlider.addEventListener("input", (e: Event) => {
-    changeVolumeIcon(volumeSlider.value);
-    // console.log(volumeSlider.value);
-  });
+  volumeControl.addEventListener("input", (e: Event) => {
+    // console.log(volumeControl.value);
+    changeVolume(volumeControl.value);
+    changeVolumeIcon(volumeControl.value);
+  }, false);
 };
 
 const clickButton = (): void => {
@@ -24,7 +26,7 @@ const clickButton = (): void => {
 };
 
 const changeVolumeIcon = (value: string): void => {
-  const numberValue = parseFloat(value);
+  const numberValue = Number(value);
   if (numberValue > 0 && numberValue < 0.50) {
     volumeIcon.textContent = String.fromCodePoint(0x1F508);
   }
@@ -39,4 +41,4 @@ const changeVolumeIcon = (value: string): void => {
   }
 }
 
-export {initListeners, btn, textarea, volumeSlider, volumeIcon};
+export {initListeners, btn, textarea, volumeControl, volumeIcon};

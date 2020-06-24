@@ -3,7 +3,7 @@ import { btn } from "./handle-input";
 
 type Transmission = (() => Promise<any>)[];
 const baseWaitingTimeForAudio: number = 500;
-const baseWaitingTimeForIdle: number = 300;
+const baseWaitingTimeForIdle: number = 100;
 
 const writer = (isOn: boolean): any => {
   //TODO some graphic change in the website while playing morse code
